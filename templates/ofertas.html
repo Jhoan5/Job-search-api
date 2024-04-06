@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block main %} {% for job in jobs %}
+<section class="container border px-5 my-3">
+  <article>
+    <h3 class="pt-5">{{ job['title'] }}</h3>
+    <p class="pt-2">
+      <span>Modalidad:</span>
+      <strong>{{ job['employmentType'] }}</strong>
+    </p>
+  </article>
+
+  <article>
+    <div class="btn-group" role="group">
+      <span class="btn btn-sm mx-1">Sitios:</span>
+      {% for jobProvider in job['jobProvider'] %}
+      <a
+        class="btn btn-primary btn-sm mx-1 rounded"
+        href="{{ jobProvider['url'] }}"
+        >{{ jobProvider['jobProvider'] }}</a
+      >
+      {% endfor %}
+    </div>
+  </article>
+  <article>
+    <h4>Descripción</h4>
+    <p>{{ job['description'] | truncate(1000,True,'...') }}</p>
+  </article>
+</section>
+{% endfor %} {% endblock %}

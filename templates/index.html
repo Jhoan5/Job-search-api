@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block main %}
+<section class="container border px-5 my-3">
+  <article>
+    <h3 class="pt-5">Este trabajo de millones</h3>
+    <p class="pt-2">
+      <span>Modalidad:</span>
+      <strong>Tiempo completo, remoto</strong>
+    </p>
+  </article>
+  <article>
+    <div class="btn-group" role="group">
+      <span class="btn btn-sm mx-1">Sitios:</span>
+      <a class="btn btn-primary btn-sm mx-1 rounded" href="">Computrabjo</a>
+      <a class="btn btn-primary btn-sm mx-1 rounded" href="">Indeed</a>
+      <a class="btn btn-primary btn-sm mx-1 rounded" href="">Freelancer</a>
+      <a class="btn btn-primary btn-sm mx-1 rounded" href="">Alcaldia</a>
+    </div>
+  </article>
+  <article>
+    <h3>Descripción</h3>
+    <p>
+      {{ lipsum(n=1, html=True, min=400, max=510) | truncate(1000,True,'...')}}
+    </p>
+  </article>
+</section>
+<p>{{datos}}</p>
+
+{% endblock %}
