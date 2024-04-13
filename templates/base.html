@@ -24,8 +24,14 @@
     />
   </head>
   <body>
+    <header class="d-flex flex-wrap py-3 px-5 bg-white">
+      <!-- logo -->
+      <img src="https://avatars.githubusercontent.com/u/125749979?v=4" alt="logo" style="width:80px; height:80px;">
+      <!-- titulo trabajo -->
+      <h1>Trabajo fácil</h1>
+    </header>
     <header class="container-fluid py-3 px-5 bg-black">
-      <h2 class="my-3 px-4 text-white">Ofertas de trabajo</h2>
+      <h2 class="my-3 px-4 text-white">Busca tu trabajo</h2>
       <!-- Input search -->
       <form class="py-3 px-4" action="" method="POST">
         <div class="input-group">
@@ -34,14 +40,18 @@
             class="form-control"
             name="search"
             placeholder="Buscar"
+            value="{{query}}"
+            required
           />
           <button type="submit" class="input-group-text">Buscar</button>
         </div>
       </form>
       {% block header_contenido %} {% endblock %}
     </header>
+
+
     <main>{% block main %}{% endblock %}</main>
-    <footer class="container-fluid py-5 d-flex bg-black text-white">
+    <footer class="container-fluid py-5 d-flex flex-wrap bg-black text-white">
       <p class="flex-fill text-center">
         Autor &copy; <a href="https://github.com/Jhoan5">Jhoan5</a> 2024
       </p>
